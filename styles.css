@@ -16,6 +16,32 @@ span{
     font-size: 1.5em;
 }
 
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #1a1919;
+        color: white;
+    }
+    
+    body.light-theme {
+           color: #222;
+           background-color: #fff;
+          }
+}
+
+@media (prefers-color-scheme: light) {
+    body{
+        color: #222;
+        background-color: #fff;
+    }
+    
+    body.dark-theme {
+        background-color: #1a1919;
+        color: white;
+          }
+}
+   
+   
+
 .header-container{
     display: flex;
     justify-content: space-between;
