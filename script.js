@@ -2,7 +2,7 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: Dark)");
 const themeToggle = document.getElementById('theme-toggle')
 
 
-// Match the icon to the theme. This only works on page reload.
+// Checks theme on inial page load and sets theme and icon class
 if (prefersDarkScheme.matches) {
    
    themeToggle.innerHTML = `<span class="material-symbols-outlined">
@@ -22,18 +22,11 @@ if (prefersDarkScheme.matches) {
  window.matchMedia('(prefers-color-scheme: dark)')
      .addEventListener('change',({ matches }) => {
  if (matches) {
-   themeToggle.innerHTML = `<span class="material-symbols-outlined">
-   dark_mode
-  </span>`
-  document.body.classList.replace("light-theme", "dark-theme")
+   toggleDark()
  } else {
-   themeToggle.innerHTML = `<span class="material-symbols-outlined">
-   light_mode
-   </span>`
-   document.body.classList.replace("dark-theme", "light-theme")
+  toggleLight()
  }
 })
-
 
 // Listen for a click on the button 
 themeToggle.addEventListener("click", function() {
@@ -41,40 +34,33 @@ themeToggle.addEventListener("click", function() {
     if (prefersDarkScheme.matches) {
 
         if (document.body.classList.contains("light-theme")){
-            themeToggle.innerHTML = `<span class="material-symbols-outlined">
-             dark_mode
-             </span>`
-             document.body.classList.replace("light-theme", "dark-theme")
-            
-        }
-        
+           toggleDark()           
+         }        
         else {
-            themeToggle.innerHTML = `<span class="material-symbols-outlined">
-            light_mode
-           </span>`
-           document.body.classList.replace("dark-theme", "light-theme")
-        }
-       
-      }
+            toggleLight()
+         }}
      
-      else {
+    else {
 
         if(document.body.classList.contains("dark-theme")){
-            themeToggle.innerHTML = `<span class="material-symbols-outlined">
-             light_mode
-             </span>`
-             document.body.classList.replace("dark-theme", "light-theme")
+            toggleLight()
         }
             else {
-                themeToggle.innerHTML = `<span class="material-symbols-outlined">
-                dark_mode
-                </span>`
-                document.body.classList.replace("light-theme", "dark-theme")
-            }
-          
-          }
-
+              toggleDark()
+            }}
 })
 
 
+function toggleLight(){
+  themeToggle.innerHTML = `<span class="material-symbols-outlined">
+             light_mode
+             </span>`
+             document.body.classList.replace("dark-theme", "light-theme")
+}
 
+function toggleDark(){
+  themeToggle.innerHTML = `<span class="material-symbols-outlined">
+  dark_mode
+  </span>`
+  document.body.classList.replace("light-theme", "dark-theme")
+}
