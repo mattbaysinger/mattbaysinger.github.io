@@ -1,5 +1,10 @@
-body {
+html {
+    font-size: calc(13px + 0.390625vw);
     font-family: 'Ysabeau Infant', sans-serif;
+}
+
+h1 {
+    font-size: 1.7 em;
 }
 
 ul{
@@ -61,3 +66,9 @@ span{
 .content{
    max-width: 50%;
 }
+
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
