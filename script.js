@@ -2,20 +2,24 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: Dark)");
 const themeToggle = document.getElementById('theme-toggle')
 
 
+
+
 // Checks theme on inial page load and sets theme and icon class
 if (prefersDarkScheme.matches) {
    
    themeToggle.innerHTML = `<span class="material-symbols-outlined">
      dark_mode
     </span>`
-    document.body.classList.toggle("dark-theme")
+    document.body.classList.toggle("dark-theme");
+   
  }
 
  else {
        themeToggle.innerHTML = `<span class="material-symbols-outlined">
         light_mode
         </span>`
-        document.body.classList.toggle("light-theme")
+        document.body.classList.toggle("light-theme");
+  
      }
 
 // listen for change to system theme and update accordingly
@@ -56,6 +60,8 @@ function toggleLight(){
              light_mode
              </span>`
              document.body.classList.replace("dark-theme", "light-theme")
+      
+          
 }
 
 function toggleDark(){
@@ -63,4 +69,5 @@ function toggleDark(){
   dark_mode
   </span>`
   document.body.classList.replace("light-theme", "dark-theme")
+  
 }

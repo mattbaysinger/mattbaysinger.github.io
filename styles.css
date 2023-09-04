@@ -5,6 +5,7 @@ html {
 
 a {
     text-decoration: none;
+    color: inherit;
 
 }
 
@@ -23,16 +24,18 @@ span{
 }
 
 @media (prefers-color-scheme: dark) {
-    body{
+    body {
         background-color: #1a1919;
         color: white;
     }
+
     
-    body.light-theme {
+    body.light-theme{
            color: #222;
            background-color: #fff;
+
           }
- 
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -41,10 +44,10 @@ span{
         background-color: #fff;
     }
     
-    body.dark-theme {
+    body.dark-theme{
         background-color: #1a1919;
         color: white;
-          }
+          } 
 
 }
    
