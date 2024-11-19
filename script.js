@@ -2,44 +2,29 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: Dark)");
 const themeToggle = document.getElementById("theme-toggle");
 
 // Checks theme on inial page load and sets theme and icon class
-if (prefersDarkScheme.matches) {
-  themeToggle.innerHTML = `<span class="material-symbols-outlined">
-     light_mode
-    </span>`;
-  document.body.classList.toggle("dark-theme");
-} else {
-  themeToggle.innerHTML = `<span class="material-symbols-outlined">
-        dark_mode
-        </span>`;
-  document.body.classList.toggle("light-theme");
-}
+themeToggle.innerHTML = `<span class="material-symbols-outlined">
+    ${prefersDarkScheme.matches ? "light_mode" : "dark_mode"}
+</span>`;
+document.body.classList.toggle(
+  prefersDarkScheme.matches ? "dark-theme" : "light-theme"
+);
 
 // listen for change to system theme and update accordingly
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", ({ matches }) => {
-    if (matches) {
-      toggleDark();
-    } else {
-      toggleLight();
-    }
+    matches ? toggleDark() : toggleLight();
   });
 
 // Listen for a click on the button
 themeToggle.addEventListener("click", function () {
-  if (prefersDarkScheme.matches) {
-    if (document.body.classList.contains("light-theme")) {
-      toggleDark();
-    } else {
-      toggleLight();
-    }
-  } else {
-    if (document.body.classList.contains("dark-theme")) {
-      toggleLight();
-    } else {
-      toggleDark();
-    }
-  }
+  prefersDarkScheme.matches
+    ? document.body.classList.contains("light-theme")
+      ? toggleDark()
+      : toggleLight()
+    : document.body.classList.contains("dark-theme")
+    ? toggleLight()
+    : toggleDark();
 });
 
 function toggleLight() {
