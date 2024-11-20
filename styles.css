@@ -1,80 +1,83 @@
 html {
-    font-size: calc(13px + 0.390625vw);
-    font-family: 'Ysabeau Infant', sans-serif;
+  font-size: calc(13px + 0.590625vw);
+  font-family: "Ysabeau Infant", sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-
+  text-decoration: none;
+  color: inherit;
 }
 
-ul{
-    list-style: none;
-    display: flex;
- }
+ul {
+  list-style: none;
+  display: flex;
+}
 
- li{
-    padding-left: 10px;
- }
+li {
+  padding-left: 10px;
+}
 
-span{
-    font-weight: bold;
-    font-size: 1.5em;
+span {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+nav {
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1a1919;
-        color: white;
-    }
+  body {
+    background-color: #1e1f20;
+    color: white;
+  }
 
-    
-    body.light-theme{
-           color: #222;
-           background-color: #fff;
-
-          }
-
+  body.light-theme {
+    color: #222;
+    background-color: #fff;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-    body{
-        color: #222;
-        background-color: #fff;
-    }
-    
-    body.dark-theme{
-        background-color: #1a1919;
-        color: white;
-          } 
+  body {
+    color: #222;
+    background-color: #fff;
+  }
 
-}
-   
-   
-
-.header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20px 0 20px;
+  body.dark-theme {
+    background-color: #1e1f20;
+    color: white;
+  }
 }
 
-
-
-.content-container{   
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-   
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 0 10px;
 }
 
-.content{
-   max-width: 50%;
+.content-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
-
-.material-symbols-outlined{
-    cursor: pointer;
+.content {
+  max-width: 50%;
 }
 
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  /* background-color: #fff; */
+  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
+}
+
+nav li:hover .dropdown-menu {
+  display: block;
+}

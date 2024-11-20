@@ -40,3 +40,15 @@ function toggleDark() {
   </span>`;
   document.body.classList.replace("light-theme", "dark-theme");
 }
+
+function minimal() {
+  minimalToggle = document.getElementById("minimal-color");
+  minimalToggle.classList.toggle("active-color");
+  colorfulToggle.classList.toggle("active-color");
+}
+
+function colorful() {
+  colorfulToggle = document.getElementById("colorful-color");
+  colorfulToggle.classList.toggle("active-color");
+  minimalToggle.classList.toggle("active-color");
+}
