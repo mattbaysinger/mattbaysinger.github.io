@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Ysabeau+Infant:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="icon" type="image/x-icon" href="data_object.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Matt Baysinger</title>
+  </head>
+  <body>
+    <div class="header-container">
+      <nav class="main-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- <li>Projects</li> -->
+          <li><a href="blog/blog_home_page.html">Blog</a></li>
+          <li>
+            Theme
+            <ul class="dropdown-menu">
+              <li id="minimal-color" onclick="minimal()">Minimal</li>
+              <li id="colorful-color" onclick="colorful()">colorful</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="theme-toggle">
+        <span></span>
+      </div>
+    </div>
+    <div class="content-container">
+      <div class="content">
+        <p>
+          <span>Hi, i'm Matt.</span><br />
+          I am a developer focused on integration and web technologies.
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
